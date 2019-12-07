@@ -1,2 +1,2 @@
 # githacking
-Messing around in git
+Messing around in gits
