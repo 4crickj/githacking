@@ -9,4 +9,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: dir
+      - run: perl -v
+      - run: python -v
       
