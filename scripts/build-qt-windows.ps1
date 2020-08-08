@@ -9,7 +9,7 @@ Invoke-WebRequest -Uri $qtCore -OutFile qtCore.zip
 
 Invoke-WebRequest -Uri $qtMultimedia -OutFile qtMultimedia.zip
 7z x qtMultiMedia.zip -oqtMultimedia
-mv "qtMultimedia\$qtMultimediaFolder" "qtCore\multimedia
+mv "qtMultimedia\$qtMultimediaFolder" "qtCore\multimedia"
 
 cd "qt_source\$qtSourceFolder"
 
