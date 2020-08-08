@@ -11,7 +11,7 @@ Invoke-WebRequest -Uri $qtMultimedia -OutFile qtMultimedia.zip
 7z x qtMultiMedia.zip -oqtMultimedia
 mv "qtMultimedia\$qtMultimediaFolder" "qtCore\multimedia"
 
-cd "qt_source\$qtSourceFolder"
+cd "qtCore\$qtSourceFolder"
 
 gcc -v
 
