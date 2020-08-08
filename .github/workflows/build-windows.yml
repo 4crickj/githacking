@@ -8,5 +8,5 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
-      - run: scripts/build-qt.ps1
+      - run: scripts/build-qt-windows.ps1
       
