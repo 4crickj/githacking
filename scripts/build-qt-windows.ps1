@@ -3,7 +3,7 @@ $qtCore = "http://download.qt-project.org/official_releases/qt/5.15/5.15.0/submo
 $qtCoreFolder = "qtbase-everywhere-src-5.15.0"
 $qtMultimedia = "http://download.qt-project.org/official_releases/qt/5.15/5.15.0/submodules/qtmultimedia-everywhere-src-5.15.0.zip"
 $qtMultimediaFolder = "qtmultimedia-everywhere-src-5.15.0"
-$qtBuild = "C:\QtBuild\
+$qtBuild = "C:\QtBuild\"
 $qtInstall = "C:\QtStatic\"
 
 $env:Path += ";$qtInstall\qtbase\bin;$qtInstall\gnuwin32\bin"
