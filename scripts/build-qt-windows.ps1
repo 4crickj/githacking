@@ -9,13 +9,11 @@ Invoke-WebRequest -Uri $qtCore -OutFile qtCore.zip
 
 Invoke-WebRequest -Uri $qtMultimedia -OutFile qtMultimedia.zip
 7z x qtMultiMedia.zip -oqtMultimedia
-mv "qtMultimedia\$qtMultimediaFolder" "qtCore\src\multimedia"
+mv "qtMultimedia\$qtMultimediaFolder" "qtCore\$qtCoreFolder\src\multimedia"
 
-cd "qtCore\$qtSourceFolder"
+cd "qtCore\$qtCoreFolder"
 
 gcc -v
-
-dir
 
 ./configure --help
 ./configure --list-features
