@@ -8,5 +8,11 @@ Invoke-WebRequest -Uri $qtSource -OutFile qt_source.zip
 
 cd "qt_source\$qtSourceFolder"
 
-./configure --help
 gcc -v
+
+./configure `
+  -opensource -confirm-license -release -no-shared -static `
+  -no-ssl -no-opengl -no-angle -no-direct2d -no-gif -no-ico -no-libpng -no-libjpeg
+
+mingw32-make
+ 
