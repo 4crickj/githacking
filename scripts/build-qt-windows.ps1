@@ -7,4 +7,4 @@ Invoke-WebRequest -Uri $qtSource -OutFile qt_source.zip
 7z x qt_source.zip -oqt_source
 
 dir qt_source/$qtSourceFolder
-qt_source/$qtSourceFolder/configure.bat --help
+cmd /c qt_source/$qtSourceFolder/configure.bat --help
