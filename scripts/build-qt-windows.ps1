@@ -11,9 +11,13 @@ cd "qt_source\$qtSourceFolder"
 gcc -v
 
 ./configure `
-  -opensource -confirm-license -release -no-shared -static `
+  -opensource -confirm-license -release -disable-shared -static `
   -make libs `
   -no-ssl -no-opengl -no-angle -no-direct2d -no-gif -no-ico -no-libpng -no-libjpeg
 
 mingw32-make -j4
+mingw32-make install
+
+$qtInstall = "C:\Qt\Qt-5.15.0"
+dir $qtInstall
  
