@@ -1,14 +1,24 @@
 
-$qtSource = "http://download.qt-project.org/official_releases/qt/5.15/5.15.0/submodules/qtbase-everywhere-src-5.15.0.zip"
-$qtSourceFolder = "qtbase-everywhere-src-5.15.0"
+$qtCore = "http://download.qt-project.org/official_releases/qt/5.15/5.15.0/submodules/qtbase-everywhere-src-5.15.0.zip"
+$qtCoreFolder = "qtbase-everywhere-src-5.15.0"
+$qtMultimedia = "http://download.qt-project.org/official_releases/qt/5.15/5.15.0/submodules/qtmultimedia-everywhere-src-5.15.0.zip"
+$qtMultimediaFolder = "qtmultimedia-everywhere-src-5.15.0"
 
-Invoke-WebRequest -Uri $qtSource -OutFile qt_source.zip
+Invoke-WebRequest -Uri $qtCore -OutFile qtCore.zip
+7z x qtCore.zip -oqtCore
 
-7z x qt_source.zip -oqt_source
+Invoke-WebRequest -Uri $qtMultimedia -OutFile qtMultimedia.zip
+7z x qtMultiMedia.zip -oqtMultimedia
+mv "qtMultimedia\$qtMultimediaFolder" "qtCore\multimedia
 
 cd "qt_source\$qtSourceFolder"
 
 gcc -v
+
+./configure --help
+./configure --list-features
+
+exit
 
 ./configure `
   -opensource -confirm-license -release -disable-shared -static `
