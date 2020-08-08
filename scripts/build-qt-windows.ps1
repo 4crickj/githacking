@@ -25,7 +25,7 @@ gcc -v
 #exit
 
 ./configure `
-  -opensource -confirm-license -release -static -prefix $qtInstall`
+  -opensource -confirm-license -release -static -prefix $qtInstall `
   -make libs `
   -no-ssl -no-opengl -no-angle -no-direct2d -no-gif -no-ico -no-libpng -no-libjpeg 
 
