@@ -1,24 +1,18 @@
 
-$qtCore = "http://download.qt-project.org/official_releases/qt/5.15/5.15.0/submodules/qtbase-everywhere-src-5.15.0.zip"
-$qtCoreFolder = "qtbase-everywhere-src-5.15.0"
-$qtMultimedia = "http://download.qt-project.org/official_releases/qt/5.15/5.15.0/submodules/qtmultimedia-everywhere-src-5.15.0.zip"
-$qtMultimediaFolder = "qtmultimedia-everywhere-src-5.15.0"
+$qtGit = "http://code.qt.io/qt/qt5.git"
+$qtTag = "v5.15.0"
 $qtBuild = "C:\QtBuild\"
 $qtInstall = "C:\QtStatic\"
 
 $env:Path += ";$qtInstall\qtbase\bin;$qtInstall\gnuwin32\bin"
 
-Invoke-WebRequest -Uri $qtCore -OutFile qtCore.zip
-7z x qtCore.zip -oqtCore
-mv "qtCore\$qtCoreFolder" "$qtBuild"
-
-Invoke-WebRequest -Uri $qtMultimedia -OutFile qtMultimedia.zip
-7z x qtMultiMedia.zip -oqtMultimedia
-mv "qtMultimedia\$qtMultimediaFolder" "$qtBuild\qtmultimedia"
+git clone --depth 1 --branch $qtTag $qtGit "$qtBuild"
 
 cd "$qtBuild"
 
 gcc -v
+
+./init-repository --help
 
 ./configure --help
 ./configure --list-features
