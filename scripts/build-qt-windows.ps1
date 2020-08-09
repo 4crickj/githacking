@@ -32,7 +32,7 @@ gcc -v
 mingw32-make -j4
 mingw32-make install
 
-7z a -r QtStatic.zip "$qtInstall"
-
 dir $qtInstall
+7z a -r QtStatic.zip $qtInstall
+
  
