@@ -12,7 +12,7 @@ cd "$qtBuild"
 
 gcc -v
 
-./init-repository -help
+perl init-repository -help
 
 ./configure --help
 ./configure --list-features
