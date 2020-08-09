@@ -9,4 +9,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: scripts/build-qt-windows.ps1
+      - uses: actions/upload-artifact@v2
+        with:
+          name: QtStatic
+          path: QtStatic.zip
       
