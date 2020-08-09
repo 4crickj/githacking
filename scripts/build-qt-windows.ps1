@@ -33,6 +33,6 @@ mingw32-make -j4
 mingw32-make install
 
 dir $qtInstall
-7z a -r QtStatic.zip C:\QtStatic\
+7z a QtStatic.zip "qtInstall"
 
  
