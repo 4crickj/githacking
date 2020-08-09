@@ -33,6 +33,6 @@ mingw32-make -j4
 mingw32-make install
 
 dir $qtInstall
-7z a "$GITHUB_WORKSPACE\QtStatic.zip" "$qtInstall"
+7z a "$Env:GITHUB_WORKSPACE\QtStatic.zip" "$qtInstall"
 
  
