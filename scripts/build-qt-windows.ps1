@@ -12,7 +12,8 @@ cd "$qtBuild"
 
 gcc -v
 
-perl init-repository -help
+perl init-repository `
+  --module-subset=qtbase,qtmultimedia
 
 ./configure --help
 ./configure --list-features
