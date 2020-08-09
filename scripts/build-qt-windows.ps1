@@ -14,7 +14,7 @@ mv "qtCore\$qtCoreFolder" "$qtBuild"
 
 Invoke-WebRequest -Uri $qtMultimedia -OutFile qtMultimedia.zip
 7z x qtMultiMedia.zip -oqtMultimedia
-mv "qtMultimedia\$qtMultimediaFolder" "$qtBuild\multimedia"
+mv "qtMultimedia\$qtMultimediaFolder" "$qtBuild\qtmultimedia"
 
 cd "$qtBuild"
 
