@@ -15,14 +15,15 @@ gcc -v
 perl init-repository `
   --module-subset=qtbase,qtmultimedia
 
-./configure --help
-./configure --list-features
-exit
+#./configure --help
+#./configure --list-features
+#exit
 
 ./configure `
   -opensource -confirm-license -release -static -prefix $qtInstall `
   -make libs `
-  -no-ssl -no-opengl -no-angle -no-direct2d -no-gif -no-ico -no-libpng -no-libjpeg 
+  -no-ssl -no-opengl -no-angle -no-direct2d -no-gif -no-ico -no-libpng -no-libjpeg `
+  -no-gstreamer -no-evr
 
 mingw32-make -j4
 mingw32-make install
