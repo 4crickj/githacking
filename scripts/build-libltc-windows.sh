@@ -11,8 +11,15 @@ mv ${libltc_ver} libltc
 ls -l libltc
 
 cd libltc
-./configure --help
+#./configure --help
 
+export CC=x86_64-w64-mingw32-gcc
+
+./configure --prefix="${GITHUB_WORKSPACE}/libltc_build" \
+  --disable-shared --enable-static
+
+make -j4
+make install
 
 
 
