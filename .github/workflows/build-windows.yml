@@ -29,4 +29,4 @@ jobs:
         with:
           path: tc2artnet
       - run: sudo apt update && sudo apt install -y mingw-w64
-      - run: tc2artnet/scripts/build-libltc-windows.sh
+      - run: chmod +x tc2artnet/scripts/* && tc2artnet/scripts/build-libltc-windows.sh
