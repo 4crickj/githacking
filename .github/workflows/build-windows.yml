@@ -13,10 +13,11 @@ jobs:
 #        with:
 #          name: QtStatic
 #          path: QtStatic.zip
-        - uses: actions/checkout@v2
-          with:
-            repository: x42/libltc
-            ref: v1.3.1
-            path: libltc
+#        - uses: actions/checkout@v2
+#          with:
+#            repository: x42/libltc
+#            ref: v1.3.1
+#            path: libltc
         - run: dir
-        - run: dir libltc
+#        - run: dir libltc
+        - run: dir C:\msys64
