@@ -75,5 +75,10 @@ jobs:
           name: libltc_build-win32
           path: libltc_build
       
-      - run: dir #scripts/build-windows.ps1
-      - run: dir tc2artnet
+      - run: scripts/build-windows.ps2
+      
+      - uses: actions/upload-artifact@v2
+        with:
+          name: tc2artnet-windows
+          path: tc2artnet.exe
+
