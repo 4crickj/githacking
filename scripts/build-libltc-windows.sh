@@ -17,7 +17,7 @@ cd libltc
 export CC=x86_64-w64-mingw32-gcc
 export LDFLAGS=-static
 
-./configure --prefix="${GITHUB_WORKSPACE}/libltc_win" \
+./configure --prefix="${GITHUB_WORKSPACE}/libltc_build" \
   --host=x86_64-w64-mingw32 \
   --disable-shared --enable-static
 
