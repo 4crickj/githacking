@@ -3,8 +3,8 @@ name: Windows Build
 on: [push]
 
 jobs:
-  build:
-    name: Window Build
+  build-qt:
+    name: Windows Qt Build
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
@@ -21,4 +21,12 @@ jobs:
       - run: dir
 #        - run: dir libltc
       - run: dir C:\msys64
-      - run: C:\msys64\usr\bin\bash.exe -c scripts/build-libltc-windows.sh
+  build-libltc:
+    name: Windows libltc Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          path: tc2artnet
+      - run: sudo apt update && sudo apt install -y mingw-w64
+      - run: tc2artnet/scripts/build-libltc-windows.sh
