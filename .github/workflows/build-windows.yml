@@ -15,7 +15,7 @@ jobs:
 #          path: QtStatic.zip
         - uses: actions/checkout@v2
           with:
-            repository: https://github.com/x42/libltc.git
+            repository: x42/libltc
             ref: v1.3.1
         - run: dir
         - run: dir libltc
