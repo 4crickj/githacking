@@ -8,40 +8,44 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
-#      - run: scripts/build-qt-windows.ps1
-#      - uses: actions/upload-artifact@v2
-#        with:
-#          name: QtStatic
-#          path: QtStatic.zip
-#        - uses: actions/checkout@v2
-#          with:
-#            repository: x42/libltc
-#            ref: v1.3.1
-#            path: libltc
-      - run: dir
-#        - run: dir libltc
-      - run: dir C:\msys64
+        with:
+          path: tc2artnet
+      
+      - uses: actions/cache@v2
+        id: qt-cache
+        with:
+          path: qt_build
+          key: qt_build-win32-${{ hashFiles('tc2artnet/scripts/build-qt-windows.ps1') }}
+      
+      - name: "Compile Qt"
+        if: steps.qt-cache.outputs.cache-hit != 'true'
+        run: scripts/build-qt-windows.ps1
+      
+      - uses: actions/upload-artifact@v2
+        with:
+          name: qt_build-win32
+          path: qt_build
   
   build-libltc:
     name: Windows libltc Build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-        id: cache
         with:
           path: tc2artnet
       
       - uses: actions/cache@v2
+        id: libltc-cache
         with:
           path: build_libltc
           key: libltc_build-win32-${{ hashFiles('tc2artnet/scripts/build-libltc-windows.sh') }}
       
       - name: "Install mingw-64"
-        if: steps.cache.outputs.cache-hit != 'true'
+        if: steps.libltc-cache.outputs.cache-hit != 'true'
         run: sudo apt update && sudo apt install -y mingw-w64
       
       - name: "Compile libltc"
-        if: steps.cache.outputs.cache-hit != 'true'
+        if: steps.libltc-cache.outputs.cache-hit != 'true'
         run: chmod +x tc2artnet/scripts/* && tc2artnet/scripts/build-libltc-windows.sh
       
       - uses: actions/upload-artifact@v2
