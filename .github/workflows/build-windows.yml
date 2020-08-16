@@ -21,4 +21,4 @@ jobs:
       - run: dir
 #        - run: dir libltc
       - run: dir C:\msys64
-      - run: C:\msys64\usr\bin\bash.exe scripts\build-libltc-windows.sh
+      - run: C:\msys64\usr\bin\bash.exe -c scripts\build-libltc-windows.sh
