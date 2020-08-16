@@ -4,7 +4,7 @@ $tc2artnetPath = "$Env:GITHUB_WORKSPACE\tc2artnet"
 
 cd "$tc2artnetPath"
 
-"$qtPath\bin\qmake.exe" tc2artnet.pro
+& "$qtPath\bin\qmake.exe" tc2artnet.pro
 mingw32-make -j4
 
 cp "$tc2artnetPath\release\tc2artnet.exe" "$Env:GITHUB_WORKSPACE"
