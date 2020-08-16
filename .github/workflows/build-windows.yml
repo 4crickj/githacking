@@ -19,7 +19,7 @@ jobs:
       
       - name: "Compile Qt"
         if: steps.qt-cache.outputs.cache-hit != 'true'
-        run: scripts/build-qt-windows.ps1
+        run: tc2artnet/scripts/build-qt-windows.ps1
       
       - uses: actions/upload-artifact@v2
         with:
