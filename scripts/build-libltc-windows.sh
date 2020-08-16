@@ -23,5 +23,8 @@ export LDFLAGS=-static
 make -j4
 make install
 
+cd $GITHUB_WORKSPACE 
+
+tar -caf libltc_static.tar.gz libltc_build
 
 
