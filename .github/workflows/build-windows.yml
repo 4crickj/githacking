@@ -24,7 +24,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: qt_build-win32
-          path: qt_build
+          path: qt_build/
   
   build-libltc:
     name: Windows libltc Build
@@ -51,4 +51,26 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: libltc_build-win32
-          path: libltc_build
+          path: libltc_build/
+
+  build-tc2artnet:
+    name: "Build tc2artnet"
+    needs: [build-qt, build-libltc]
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - uses: actions/checkout@v2
+        with:
+          repository: zcz3/tc2artnet
+          path: tc2artnet
+      
+      - uses: actions/download-artifact@v2
+        with:
+          name: qt_build-win32
+      
+      - uses: actions/download-artifact@v2
+        with:
+          name: libltc_build-win32
+      
+      - run: dir #scripts/build-windows.ps1
