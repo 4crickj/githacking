@@ -28,4 +28,4 @@ perl init-repository `
 mingw32-make -j4
 mingw32-make install
 
-mv "$qtInstall" "$Env:GITHUB_WORKSPACE\QtStatic\"
+mv "$qtInstall" "$Env:GITHUB_WORKSPACE\qt_build\"
