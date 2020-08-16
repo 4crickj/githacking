@@ -32,5 +32,5 @@ jobs:
       - run: chmod +x tc2artnet/scripts/* && tc2artnet/scripts/build-libltc-windows.sh
       - uses: actions/upload-artifact@v2
         with:
-          name: libltc_static
-          path: libltc_static.tar.gz
+          name: libltc_win
+          path: libltc_win
