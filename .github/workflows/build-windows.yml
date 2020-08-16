@@ -79,6 +79,6 @@ jobs:
       
       - uses: actions/upload-artifact@v2
         with:
-          name: tc2artnet-windows
+          name: tc2artnet-windows-${{ github.ref }}
           path: tc2artnet.exe
 
