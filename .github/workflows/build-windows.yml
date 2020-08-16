@@ -37,7 +37,7 @@ jobs:
       - uses: actions/cache@v2
         id: libltc-cache
         with:
-          path: build_libltc
+          path: libltc_build
           key: libltc_build-win32-${{ hashFiles('tc2artnet/scripts/build-libltc-windows.sh') }}
       
       - name: "Install mingw-64"
