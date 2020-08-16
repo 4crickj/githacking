@@ -1,6 +1,8 @@
 
 $qtGit = "http://code.qt.io/qt/qt5.git"
 $qtTag = "v5.15.0"
+
+# We need to keep the paths short otherwise we run into weird compile errors
 $qtBuild = "C:\QtBuild\"
 $qtInstall = "C:\QtStatic\"
 
@@ -19,7 +21,7 @@ perl init-repository `
 #./configure --list-features
 #exit
 
-./configure `
+./configure.bat `
   -opensource -confirm-license -release -static -prefix $qtInstall `
   -make libs `
   -no-ssl -no-opengl -no-angle -no-direct2d -no-gif -no-ico -no-libpng -no-libjpeg `
