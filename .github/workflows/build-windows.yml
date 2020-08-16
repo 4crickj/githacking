@@ -68,9 +68,12 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: qt_build-win32
+          path: qt_build
       
       - uses: actions/download-artifact@v2
         with:
           name: libltc_build-win32
+          path: libltc_build
       
       - run: dir #scripts/build-windows.ps1
+      - run: dir tc2artnet
