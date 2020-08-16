@@ -30,3 +30,7 @@ jobs:
           path: tc2artnet
       - run: sudo apt update && sudo apt install -y mingw-w64
       - run: chmod +x tc2artnet/scripts/* && tc2artnet/scripts/build-libltc-windows.sh
+      - uses: actions/upload-artifact@v2
+        with:
+          name: libltc_static
+          path: libltc_static.tar.gz
